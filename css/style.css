@@ -329,3 +329,16 @@ html, body, .ctrl, .regen, .icon-btn { transition: background-color 0.6s, border
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* About me: hello line with headshot */
+.intro { display: flex; align-items: center; gap: 16px; margin: 8px 0 20px; }
+.headshot { flex: none; width: 84px; height: 84px; border-radius: 50%; object-fit: cover; }
+.headshot--placeholder {
+  display: grid; place-items: center;
+  border: 1px dashed var(--muted); color: var(--muted); font: 600 1rem var(--mono); letter-spacing: 0.1em;
+}
+.lead { margin: 0; font-size: 1.15rem; line-height: 1.45; }
+.timeline { list-style: none; padding: 0; display: grid; gap: 8px; }
+.timeline li { display: grid; grid-template-columns: 110px 1fr; gap: 8px; }
+.timeline span { font: 0.72rem var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+.about-links { margin-top: 24px; }
