@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cooperative Connections · Ian Smith</title>
+  <meta name="description" content="Helping rural electric co-ops mobilize the help their communities already have. A case study by Ian Smith, product strategist and designer.">
+  <meta name="theme-color" content="#141414">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/case.css">
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+  </script>
+  <script type="module" src="js/mini-map.js"></script>
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main">Skip to the case study</a>
+
+  <header class="case-header">
+    <a class="mini-map" href="index.html#project-2" data-place="project-2" aria-label="Back to the map">
+      <span class="mini-map-label"><span aria-hidden="true">←</span> Ian Smith · Map</span>
+    </a>
+  </header>
+
+  <nav id="section-nav" class="section-nav" aria-label="Portfolio sections">
+    <ol><li><a href="index.html#about"><span class="num" aria-hidden="true">01</span> About me</a></li><li><a href="dfw-consumer-council.html"><span class="num" aria-hidden="true">02</span> DFW Consumer Council</a></li><li><a href="cooperative-connections.html" aria-current="page"><span class="num" aria-hidden="true">03</span> Cooperative Connections</a></li><li><a href="heatwise.html"><span class="num" aria-hidden="true">04</span> HeatWise</a></li></ol>
+    <div class="nav-utility">
+      <ul class="nav-links">
+        <li><a class="nav-link" href="index.html#contact"><svg aria-hidden="true" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="2" y="3.5" width="12" height="9" rx="1.5"/><path d="m2.5 4.5 5.5 4.5 5.5-4.5"/></svg> Contact</a></li>
+        <li><a class="nav-link" href="resume.pdf" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M3 13h10"/></svg> Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main" class="case">
+    <p class="eyebrow">03 · The falls · Case study</p>
+    <h1>Cooperative Connections</h1>
+    <p class="case-sub">Energy Resilience for Rural Texans</p>
+    <p class="case-lead">Helping rural electric co-ops mobilize the help their communities already have.</p>
+    <dl class="facts"><div><dt>Role</dt><dd>Team lead &amp; project manager</dd></div><div><dt>Timeline</dt><dd>Fall 2026 capstone, UNT</dd></div><div><dt>Team</dt><dd>2 (with Quincy)</dd></div><div><dt>Tools</dt><dd>Figma, FigJam</dd></div></dl>
+    <div class="tldr"><p class="tldr-label">In short</p><p>When the power goes out in rural Texas, help is often far away, but neighbors, churches and local groups already step in. Cooperative Connections is a dashboard and partner portal that gives rural electric cooperatives a map of that community help. It shows where coverage has gaps and helps them fill those gaps with local partners, so outages hurt less without building anything new.</p><p><span class="todo todo--need"><b>Needs Ian</b> outcome line once testing / final review is done, e.g. "In testing, co-op staff found and filled a coverage gap in under X minutes."</span></p></div>
+    <div class="case-actions"><a class="btn btn--primary" href="https://www.figma.com/proto/QCfcXhdSftCfnXkjVUCQf8/Design-File---Workspace?page-id=131%3A2" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 3.5v9l7-4.5Z"/></svg> View the prototype</a><span class="todo todo--need"><b>Needs Ian</b> turn on link sharing for this Figma file so visitors can open the prototype</span><a class="btn" href="#where-it-got-hard">Where it got hard <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+    <figure class="fig fig--wide"><a href="img/case/energy-gaps.webp" target="_blank" rel="noopener"><img src="img/case/energy-gaps.webp" alt="Co-op dashboard map of a rural county, with red outlines marking areas where partner coverage falls short" loading="lazy"></a><figcaption>The co-op dashboard with “Highlight gaps” on: red areas are members without enough nearby help.</figcaption></figure>
+    <section id="the-problem"><h2>The problem</h2>
+<p>Texas runs its own power grid, and when it fails, rural Texans feel it first and longest. The people at greatest risk are three overlapping groups:</p>
+<ul><li><strong>Energy-burdened</strong> households, already spending a large share of income on power</li><li><strong>Isolated</strong> households, far from services and from each other</li><li><strong>Medically vulnerable</strong> people, who rely on power for equipment, medication or temperature control</li></ul>
+<p>Formal aid such as emergency management and the Red Cross takes time to arrive. In the meantime, the response is local and informal: churches, volunteer fire departments, neighbors with generators. That help is real, but it isn't organized, so it's uneven and hard to count on.</p>
+<p class="question"><span>Our question</span>How might we reduce the harm of outages for rural Texans by strengthening the help their communities already provide?</p></section><section id="research"><h2>Research</h2>
+<p>We started with the system, not the screen.</p>
+<ul><li><strong>Literature and desk research</strong> on outages, energy burden and assistance programs such as CEAP and LIHEAP</li><li><strong>A map of the Texas power market,</strong> from ERCOT and power generators through transmission utilities, retail providers, municipal utilities and electric co-ops, to understand who actually holds the relationship with rural households</li><li><strong>User and stakeholder interviews</strong> with rural residents and people involved in emergency response <span class="todo todo--need"><b>Needs Ian</b> how many of each?</span></li><li><strong>A competitive review</strong> of disaster-response best practices</li><li><strong>Journey maps across an outage timeline:</strong> before, during and after the outage, through to bill assistance</li></ul>
+<figure class="fig fig--wide"><a href="img/case/energy-blueprint.webp" target="_blank" rel="noopener"><img src="img/case/energy-blueprint.webp" alt="Service blueprint grid with lanes for residents, partners, the co-op coordinator, touchpoints, back stage and support, across preparedness and recovery stages" loading="lazy"></a><figcaption>Service blueprint for the co-op toolkit, from mapping partners before a storm to the debrief after it.</figcaption></figure>
+<figure class="fig fig--wide"><a href="img/case/energy-journey.webp" target="_blank" rel="noopener"><img src="img/case/energy-journey.webp" alt="Journey map titled Earl’s oxygen on day two of the freeze, with an emotion line across five stages" loading="lazy"></a><figcaption>One of four before, during and after journeys: keeping a resident on home oxygen safe through a freeze.</figcaption></figure></section><section id="key-insights"><h2>Key insights</h2>
+<ol><li><strong>Co-ops are the natural coordinator.</strong> Of all the players in the Texas market, electric cooperatives are the only ones that are both member-owned and local. They already know their members and their territory.</li><li><strong>The social capital already exists. It's just invisible.</strong> Churches, first responders and neighbors already help each other. What's missing is a shared picture of who can help, where, and with what.</li><li><strong>Information is the first need.</strong> People need information before, during and after an outage, including help applying for bill assistance once the power is back.</li><li><strong>Generosity grows when people feel they have enough.</strong> Residents who feel prepared are more likely to help a neighbor, and that effect can snowball.</li></ol></section><section id="where-it-got-hard" class="hard"><h2>Where it got hard</h2>
+<aside class="struggle">
+  <p class="struggle-tag"><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13 6.5 5.5 9 9.5l1.5-2L14 13Z"/></svg> Struggle 1 of 3</p>
+  <h3>The system was enormous.</h3>
+  <p>The Texas grid involves ERCOT, generators, transmission utilities, retail providers, municipal utilities, co-ops and state agencies, plus federal rules about why Texas stays off the national grid. Classmates kept asking questions we couldn't yet answer.</p>
+  <div class="struggle-fix"><p class="struggle-tag struggle-tag--fix"><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8.5 3 3 7-7"/></svg> How I got through it</p>
+  <p>Instead of narrowing too early, I mapped the whole market, one player at a time: who they are, what they own, and who they answer to. I researched and wrote up answers to every open question from our mid-project review. That map is what showed us co-ops were the right place to intervene.</p></div>
+</aside>
+<aside class="struggle">
+  <p class="struggle-tag"><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13 6.5 5.5 9 9.5l1.5-2L14 13Z"/></svg> Struggle 2 of 3</p>
+  <h3>Our first concept was too vague.</h3>
+  <p>Our early direction, a household readiness network, tried to serve everyone, and feedback said so. We hadn't looked closely enough at how rural communities already help each other during emergencies.</p>
+  <div class="struggle-fix"><p class="struggle-tag struggle-tag--fix"><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8.5 3 3 7-7"/></svg> How I got through it</p>
+  <p>We went back to that question directly: who shows up during an outage, and how they find out they're needed. Mapping the answers across an outage timeline turned the problem around. The help existed. It was just invisible. That gave us a sharper concept and a clear owner. <span class="todo todo--guess"><b>Check this</b> confirm the arc</span></p></div>
+</aside>
+<aside class="struggle">
+  <p class="struggle-tag"><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13 6.5 5.5 9 9.5l1.5-2L14 13Z"/></svg> Struggle 3 of 3</p>
+  <h3>Leading a two-person capstone at full scale.</h3>
+  <p>With only two of us, every week had research, synthesis and design all competing for time.</p>
+  <div class="struggle-fix"><p class="struggle-tag struggle-tag--fix"><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8.5 3 3 7-7"/></svg> How I got through it</p>
+  <p>As team lead and PM, I set up a weekly rhythm with stand-ups and breakdowns, a shared tracker, and clear "bring this by Wednesday" handoffs. Each task was rated by difficulty, so we split work by load rather than by count.</p></div>
+</aside></section><section id="key-decisions-and-why"><h2>Key decisions, and why</h2>
+<ul><li><strong>Design for the co-op, not only the household.</strong> Our early concept, "ReadyHome Network," centered on household readiness profiles. Mid-project feedback pushed us to look at how rural communities actually work together in emergencies. That moved the focus to the organization best placed to coordinate them. <span class="todo todo--guess"><b>Check this</b> confirm this was the pivot</span></li><li><strong>Strengthen what exists instead of building something new.</strong> A toolkit that maps and mobilizes existing community help is cheaper and faster to adopt than new infrastructure. It also gives co-ops a clear reason to use it: lower outage harm and stronger member trust.</li><li><strong>Keep it to two connected surfaces.</strong> A co-op dashboard for staff, and a partner portal for community groups, joined by one shared network.</li></ul></section><section id="the-solution"><h2>The solution</h2>
+<p><strong>Co-op dashboard.</strong> A map of the co-op's territory with overlays for member vulnerability and partner coverage. When an area falls below a coverage threshold, the dashboard flags it as a gap. Staff can open the gap, see suggested local partners, and reach out by phone or email in one step.</p>
+<figure class="fig fig--wide"><a href="img/case/energy-why-gap.webp" target="_blank" rel="noopener"><img src="img/case/energy-why-gap.webp" alt="Dashboard panel explaining why an area is flagged as a medical power gap" loading="lazy"></a><figcaption>“Why is this a gap?” explains the numbers behind every flag, so staff can trust it before they act.</figcaption></figure>
+<p><strong>Partner portal.</strong> Churches, volunteer groups and local organizations get a simple form to join the network and say what they can offer. When they're added, the co-op's dashboard updates and the gap closes.</p>
+<figure class="fig fig--wide"><a href="img/case/energy-partner-share.webp" target="_blank" rel="noopener"><img src="img/case/energy-partner-share.webp" alt="Partner sign-up step asking what the organization could share during an outage, with options like power for medical devices and cold storage" loading="lazy"></a><figcaption>Partner portal: a church or business says what it can share during an outage, in plain language.</figcaption></figure>
+<p><strong>The full loop:</strong> a gap is spotted, the system suggests a partner, the co-op reaches out, the partner signs up through the portal, and the gap disappears from the map.</p>
+<figure class="fig fig--wide"><a href="img/case/energy-home.webp" target="_blank" rel="noopener"><img src="img/case/energy-home.webp" alt="Dashboard home showing coverage by resource, open gaps, and check-ins" loading="lazy"></a><figcaption>Dashboard home: coverage by resource, open gaps and partner check-ins in one view.</figcaption></figure>
+<p>Supporting work: service map, user flows, a design system, and brand exploration for "Cooperative Connections."</p></section><section id="outcome"><h2>Outcome</h2>
+<p><span class="todo todo--need"><b>Needs Ian</b> testing or final-review results. Useful forms: task success or time for the gap-filling flow, co-op or expert feedback, a quote from a rural resident or co-op staff member.</span></p></section><section id="reflection"><h2>Reflection</h2>
+<p><span class="todo todo--need"><b>Needs Ian</b> Ian's own words. Prompts: What did leading a two-person team teach you about scoping? What would a real co-op pilot need to prove? What would you test next?</span> Draft starter: Leading this project taught me that in systems work, the most valuable design move is often finding the right owner. Once we saw that co-ops were the one local, member-owned player in the system, the product almost designed itself.</p></section>
+    <nav class="case-next" aria-label="More case studies">
+      <a href="index.html#project-2" class="btn"><span aria-hidden="true">←</span> Back to the map</a>
+      <a href="heatwise.html" class="btn btn--primary">Next: HeatWise <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </nav>
+  </main>
+
+  <footer class="case-footer">
+    <p>Ian Smith · <a href="mailto:ian@smith-family.me">ian@smith-family.me</a> · <a href="https://www.linkedin.com/in/iansmithdesign" target="_blank" rel="noopener">LinkedIn</a></p>
+  </footer>
+</body>
+</html>

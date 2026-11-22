@@ -8,49 +8,8 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { createTerrain, CONFIG, mulberry32 } from './terrain.js';
 import { planTrail } from './trails.js';
 import { STARS, CONSTELLATION_LINES } from './sky-data.js';
+import { POINTS, EXTRA_SECTIONS, TRAILS, layoutPoints, sitesFor } from './places.js';
 
-// ---------------------------------------------------------------------------
-// Points of interest. `id` must match a link in the nav (href="#id") and an
-// <article data-section="id"> in index.html. Each place lives in its own
-// quarter of the map (`quadrant`: x and z signs, -1 = left/back, 1 = right/front)
-// and moves around inside it every time the terrain is regenerated.
-// ---------------------------------------------------------------------------
-// `kind` picks the landform the terrain builds there: camp, peak, falls or lake.
-const POINTS = [
-  { id: 'about',     label: 'About me',  place: 'Base camp', kind: 'camp',  quadrant: [-1, 1] },
-  { id: 'project-1', label: 'Project 1', place: 'Summit',    kind: 'peak',  quadrant: [-1, -1] },
-  { id: 'project-2', label: 'Project 2', place: 'The falls', kind: 'falls', quadrant: [1, -1] },
-  { id: 'project-3', label: 'Project 3', place: 'The lake',  kind: 'lake',  quadrant: [1, 1] },
-];
-// Sections that open in the panel but have no place on the map.
-const EXTRA_SECTIONS = ['contact'];
-// Spacing rules for random placement (map units, -1..1 across the block).
-const MIN_GAP = 0.62;     // places never closer than this to each other
-const EDGE_MARGIN = 0.3;  // ...or closer than this to the edge
-const QUAD_INNER = 0.22;  // ...or closer than this to the middle lines
-
-// Pick a position for every place, inside its quadrant, following the rules above.
-function layoutPoints(seed) {
-  const r = mulberry32(seed * 17 + 3);
-  const span = 1 - EDGE_MARGIN - QUAD_INNER;
-  let pos = null;
-  for (let attempt = 0; attempt < 500 && !pos; attempt++) {
-    const tryPos = POINTS.map((p) => [
-      p.quadrant[0] * (QUAD_INNER + r() * span),
-      p.quadrant[1] * (QUAD_INNER + r() * span),
-    ]);
-    const ok = tryPos.every((a, i) => tryPos.every((b, j) => i >= j || Math.hypot(a[0] - b[0], a[1] - b[1]) >= MIN_GAP));
-    if (ok) pos = tryPos;
-  }
-  pos ??= POINTS.map((p) => [p.quadrant[0] * 0.5, p.quadrant[1] * 0.5]);
-  POINTS.forEach((p, i) => {
-    p.at = pos[i];
-    // waterfalls face roughly toward the opening camera view, so the drop is visible
-    if (p.kind === 'falls') p.angle = Math.PI / 4 + (r() - 0.5) * 1.2;
-  });
-}
-// Which points are joined by trails (by index in POINTS).
-const TRAILS = [[0, 1], [1, 2], [2, 3], [0, 3]];
 
 const ACCENT = new THREE.Color('#ff6b35');
 const BG = new THREE.Color('#141414');
@@ -90,17 +49,11 @@ function init() {
 
   panel.hidden = true;
 
-  // Projects accordion in the nav: opens on click, and on its own when a project is showing.
-  const projectToggle = document.getElementById('projects-toggle');
-  const projectList = document.getElementById('nav-projects');
-  const projectGroup = projectToggle.closest('.nav-group');
-  function setProjectsOpen(open) {
-    projectToggle.setAttribute('aria-expanded', String(open));
-    projectList.inert = !open; // closed links can't be tabbed to
-    projectGroup.classList.toggle('is-open', open);
-  }
-  projectToggle.addEventListener('click', () => setProjectsOpen(projectToggle.getAttribute('aria-expanded') !== 'true'));
-  setProjectsOpen(false); // starts open in the HTML so it still works without 3D
+  // The name in the corner always returns to the map overview.
+  document.getElementById('home-link').addEventListener('click', (e) => {
+    e.preventDefault();
+    backToMap();
+  });
   articles.forEach((a) => (a.hidden = true));
 
   // ----- renderer, scene, camera -----
@@ -248,13 +201,7 @@ function init() {
     content = new THREE.Group();
     world.add(content);
     layoutPoints(seed);
-    const sites = {};
-    POINTS.forEach((p) => {
-      sites[p.kind] = p.kind === 'falls'
-        ? { at: p.at, angle: p.angle, avoid: POINTS.filter((q) => q !== p).map((q) => [q.at[0], q.at[1], 0.3]) }
-        : p.at;
-    });
-    terrain = createTerrain({ ...CONFIG, seed }, sites);
+    terrain = createTerrain({ ...CONFIG, seed }, sitesFor());
     LM = terrain.landmarks;
 
     const terrainMesh = new THREE.Mesh(
@@ -697,9 +644,6 @@ function init() {
       if (a.getAttribute('href') === `#${id}`) a.setAttribute('aria-current', 'location');
       else a.removeAttribute('aria-current');
     });
-    const inProjects = !!projectList.querySelector('[aria-current]');
-    projectGroup.classList.toggle('has-current', inProjects);
-    if (inProjects) setProjectsOpen(true);
     POINTS.forEach((q) => q.label_el.classList.toggle('is-active', q.id === id));
     live.textContent = `Showing ${p ? p.label : article.querySelector('h2').textContent}. Press Escape to return to the map.`;
     const heading = panel.querySelector(`article[data-section="${id}"] h2`);
@@ -726,7 +670,6 @@ function init() {
     const hide = () => { if (!activeId) panel.hidden = true; };
     if (reducedMotion) hide(); else setTimeout(hide, 350);
     navLinks.forEach((a) => a.removeAttribute('aria-current'));
-    projectGroup.classList.remove('has-current');
     POINTS.forEach((q) => q.label_el.classList.remove('is-active'));
     flyTo(homePosition(), ORIGIN, 0);
     live.textContent = 'Back to the map overview.';

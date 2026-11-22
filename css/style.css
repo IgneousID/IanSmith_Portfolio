@@ -316,7 +316,8 @@ html, body, .ctrl, .regen, .icon-btn { transition: background-color 0.6s, border
   .map-mode .section-nav .nav-links { flex-direction: row; }
   .map-mode .section-nav .nav-group.is-open { grid-column: 1 / -1; }
   .map-mode .section-nav .nav-sub { display: grid; grid-template-columns: 1fr 1fr 1fr; margin-left: 0; border-left: 0; padding-left: 0; }
-  .map-mode .nav-group-toggle, .map-mode .section-nav a { white-space: nowrap; }
+  .map-mode .section-nav > ol a { white-space: normal; line-height: 1.25; align-items: baseline; }
+  .map-mode .section-nav .nav-links a { white-space: nowrap; }
   .map-mode .panel {
     top: auto; left: 0; width: 100%; height: 58vh;
     border-left: 0; border-top: 1px solid var(--line); border-radius: 14px 14px 0 0;
@@ -342,3 +343,28 @@ html, body, .ctrl, .regen, .icon-btn { transition: background-color 0.6s, border
 .timeline li { display: grid; grid-template-columns: 110px 1fr; gap: 8px; }
 .timeline span { font: 0.72rem var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
 .about-links { margin-top: 24px; }
+
+/* ---------- Shared by the map panel and the case study pages ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 14px; border: 1px solid var(--line); border-radius: 999px;
+  color: var(--text); font: 500 0.88rem/1 var(--sans); text-decoration: none;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn--primary { background: var(--accent); border-color: var(--accent); color: #141414; }
+.btn--primary:hover { background: transparent; color: var(--accent); }
+.struggle-tag {
+  display: inline-flex; align-items: center; gap: 6px; margin: 0 0 6px;
+  font: 600 0.7rem var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
+}
+.todo {
+  display: inline; padding: 1px 6px; border: 1px dashed currentColor; border-radius: 4px;
+  font: 0.78rem/1.6 var(--mono); color: #ffb366; background: rgba(255, 179, 102, 0.08);
+}
+.todo b { font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-right: 4px; }
+.todo--guess { color: #9fc3ff; background: rgba(159, 195, 255, 0.08); }
+.panel-hard { margin: 22px 0; padding: 14px 16px; border-left: 3px solid var(--accent); background: rgba(255, 107, 53, 0.07); border-radius: 0 8px 8px 0; }
+.panel-hard ul { margin: 4px 0 0; padding-left: 18px; }
+.panel-hard li { margin: 4px 0; }
+.panel-actions { margin-top: 24px; }
