@@ -18,6 +18,7 @@
     }
   </script>
   <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/nav-menu.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#section-nav">Skip to section links</a>
@@ -26,6 +27,10 @@
     <p class="wordmark"><a id="home-link" href="./">Ian Smith</a></p>
     <p class="tagline">Product strategist &amp; designer</p>
   </header>
+
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="section-nav" aria-label="Open menu">
+    <svg aria-hidden="true" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="bar bar--top" d="M3 5h14"/><path class="bar bar--mid" d="M3 10h14"/><path class="bar bar--bot" d="M3 15h14"/></svg>
+  </button>
 
   <!-- Secondary navigation: works with keyboard, screen readers, and without 3D. -->
   <nav id="section-nav" class="section-nav" aria-label="Portfolio sections">

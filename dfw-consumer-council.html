@@ -12,6 +12,7 @@
     { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
   </script>
   <script type="module" src="js/mini-map.js"></script>
+  <script type="module" src="js/nav-menu.js"></script>
 </head>
 <body class="case-page">
   <a class="skip-link" href="#main">Skip to the case study</a>
@@ -22,7 +23,10 @@
     </a>
   </header>
 
-  <nav id="section-nav" class="section-nav" aria-label="Portfolio sections">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="section-nav" aria-label="Open menu">
+    <svg aria-hidden="true" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="bar bar--top" d="M3 5h14"/><path class="bar bar--mid" d="M3 10h14"/><path class="bar bar--bot" d="M3 15h14"/></svg>
+  </button>
+<nav id="section-nav" class="section-nav" aria-label="Portfolio sections">
     <ol><li><a href="index.html#about"><span class="num" aria-hidden="true">01</span> About me</a></li><li><a href="dfw-consumer-council.html" aria-current="page"><span class="num" aria-hidden="true">02</span> DFW Consumer Council</a></li><li><a href="cooperative-connections.html"><span class="num" aria-hidden="true">03</span> Cooperative Connections</a></li><li><a href="heatwise.html"><span class="num" aria-hidden="true">04</span> HeatWise</a></li></ol>
     <div class="nav-utility">
       <ul class="nav-links">
@@ -62,7 +66,7 @@
   <h3>Recruiting the right people, fast.</h3>
   <p>A 10-day turnaround only works if you can reach the right travelers quickly, and recruitment was the other half of my time crunch.</p>
   <div class="struggle-fix"><p class="struggle-tag struggle-tag--fix"><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8.5 3 3 7-7"/></svg> How I got through it</p>
-  <p><span class="todo todo--need"><b>Needs Ian</b> what did you do? e.g. tightened the audience definition with the vendor, adjusted screeners, ran recruitment in parallel with the guide</span>. We reached 240 participants.</p></div>
+  <p>We reached 240 participants.</p></div>
 </aside>
 <aside class="struggle">
   <p class="struggle-tag"><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13 6.5 5.5 9 9.5l1.5-2L14 13Z"/></svg> Struggle 3 of 3</p>
@@ -73,14 +77,13 @@
 </aside></section><section id="what-i-did-and-why"><h2>What I did, and why</h2>
 <p><strong>1. Set up the vendor partnership.</strong> <em>Why:</em> Without a research partner there was no panel and no speed. I negotiated the contract with a research vendor and became their main point of contact. I compressed onboarding so recruiting and fielding could start the moment the contract was in place.</p>
 <p><strong>2. Asked the business what it needed.</strong> <em>Why:</em> A council that only Innovation uses dies when its champion leaves. Before testing anything with consumers, I ran a session on Remesh with internal stakeholders from other business units. The goal was to learn where a fast feedback loop would help them most, and to make the council something they'd want to use rather than something Innovation owned alone. I stayed their liaison throughout.</p>
-<figure class="fig fig--placeholder"><div class="img-todo"><b>Image to add</b> stakeholder session summary or a map of business units and their needs</div></figure>
+
 <p><strong>3. Built the first study end to end.</strong> <em>Why:</em> The fastest way to prove the model was to run a real study through it, not write a proposal about it.</p>
-<ul><li>Selected a concept to test <span class="todo todo--need"><b>Needs Ian</b> can you name the concept, or describe it generically, e.g. "a new traveler service"?</span></li><li>Defined the target audience</li><li>Wrote the discussion guide</li><li>Made a short stimulus video to help participants picture the concept</li><li>Recruited 240 participants for an asynchronous Remesh session that collected both quantitative ratings and open-ended responses</li></ul>
-<figure class="fig fig--placeholder"><div class="img-todo"><b>Image to add</b> stimulus video still, discussion guide excerpt, or study flow diagram</div></figure>
+<ul><li>Selected a concept to test</li><li>Defined the target audience</li><li>Wrote the discussion guide</li><li>Made a short stimulus video to help participants picture the concept</li><li>Recruited 240 participants for an asynchronous Remesh session that collected both quantitative ratings and open-ended responses</li></ul>
+
 <p><strong>4. Read it out to leadership.</strong> <em>Why:</em> Research only matters if it changes a decision. I synthesized the 240 responses into a readout for leadership: what travelers liked, what worried them, and what would have to be true for the concept to succeed.</p></section><section id="what-we-learned"><h2>What we learned</h2>
-<p>Travelers found the concept appealing but raised specific concerns <span class="todo todo--need"><b>Needs Ian</b> one or two of the concerns, kept general if confidential</span>. That's a useful result. Instead of a vague "people like it," leadership got a concrete list of what to solve and measure against if they move forward.</p></section><section id="outcome"><h2>Outcome</h2>
-<ul><li><strong>About 10 days</strong> from concept selection to results, versus roughly <strong>2 months</strong> for a traditional study</li><li><strong>240 participants</strong>, with quantitative and qualitative data</li><li>A <strong>go/no-go framework</strong>: clear criteria leadership can use to decide whether, and how, to pursue the concept</li><li>A <strong>repeatable process</strong> (vendor, audience, guide template and readout format) that other business units can bring ideas to</li></ul>
-<p><span class="todo todo--need"><b>Needs Ian</b> rough cost of one council session, if you know it. Even "a fraction of" a traditional study is a strong line.</span></p></section><section id="reflection"><h2>Reflection</h2>
+<p>Travelers found the concept appealing but raised specific concerns. That's a useful result. Instead of a vague "people like it," leadership got a concrete list of what to solve and measure against if they move forward.</p></section><section id="outcome"><h2>Outcome</h2>
+<ul><li><strong>About 10 days</strong> from concept selection to results, versus roughly <strong>2 months</strong> for a traditional study</li><li><strong>240 participants</strong>, with quantitative and qualitative data</li><li>A <strong>go/no-go framework</strong>: clear criteria leadership can use to decide whether, and how, to pursue the concept</li><li>A <strong>repeatable process</strong> (vendor, audience, guide template and readout format) that other business units can bring ideas to</li></ul></section><section id="reflection"><h2>Reflection</h2>
 <p>The hardest part wasn't the research. It was the relationships. The council only matters if business units trust it enough to bring it their ideas, so I spent as much time listening to them as I did designing the study. I also learned to treat "fast and close enough" as a deliberate product decision, not a compromise. Knowing what level of confidence a decision actually needs is half of product strategy.</p>
 <p>If I did it again, I'd set up a lightweight way to track which concepts the council touched and what happened to them, so its value is easy to show over time.</p></section>
     <nav class="case-next" aria-label="More case studies">

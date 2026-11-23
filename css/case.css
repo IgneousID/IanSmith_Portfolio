@@ -92,12 +92,17 @@
   .case-header, .case-page .section-nav { position: absolute; }
   .case { padding-top: 170px; }
 }
+@media (max-width: 799px) {
+  .case-header { position: static; padding: 14px 72px 0 14px; }
+  .mini-map { width: 100%; height: 150px; }
+  .mini-map-label {
+    left: 10px; bottom: 10px; padding: 11px 16px; font-size: 1rem; letter-spacing: 0.04em;
+    background: rgba(20, 20, 20, 0.88); border: 1px solid var(--line);
+  }
+  .case-page .section-nav { position: fixed; top: 68px; right: 14px; }
+  .case { padding-top: 40px; }
+}
 @media (max-width: 700px) {
-  .case-header { position: static; padding: 16px 16px 0; }
-  .mini-map { width: 100%; height: 140px; }
-  .case-page .section-nav { position: static; margin: 12px 16px 0; }
-  .case-page .section-nav ol { display: grid; grid-template-columns: 1fr 1fr; }
-  .case-page .nav-links { flex-direction: row; }
   .case { padding: 32px 16px 32px; }
   .case .facts { grid-template-columns: 1fr 1fr; }
   .struggle { margin-inline: -16px; padding-left: 20px; }
