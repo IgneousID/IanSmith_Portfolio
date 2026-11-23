@@ -10,6 +10,8 @@ import { POINTS, layoutPoints, sitesFor } from './places.js';
 
 const link = document.querySelector('.mini-map');
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Phones get a gentler turn, since the map runs the full width of the screen there.
+const small = window.matchMedia('(max-width: 799px)');
 
 function webglAvailable() {
   try {
@@ -87,8 +89,8 @@ if (link && webglAvailable()) {
     const dt = Math.min((now - last) / 1000, 0.05);
     last = now;
     if (!reduced) {
-      angle += dt * 0.12;
-      pins.forEach((g) => (g.rotation.y = now / 1500));
+      angle += dt * (small.matches ? 0.035 : 0.12);
+      pins.forEach((g) => (g.rotation.y = now / (small.matches ? 3000 : 1500)));
     }
     place();
     renderer.render(scene, camera);
