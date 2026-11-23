@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ian Smith · Product Strategy &amp; Design</title>
+  <meta name="description" content="Ian Smith, product strategist and designer. Explore an interactive topographic map of his work.">
+  <meta name="theme-color" content="#141414">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Loads the 3D library (three.js) straight from a CDN, so there is no build step. -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#section-nav">Skip to section links</a>
+
+  <header class="site-header">
+    <p class="wordmark"><a id="home-link" href="./">Ian Smith</a></p>
+    <p class="tagline">Product strategist &amp; designer</p>
+  </header>
+
+  <!-- Secondary navigation: works with keyboard, screen readers, and without 3D. -->
+  <nav id="section-nav" class="section-nav" aria-label="Portfolio sections">
+    <ol>
+      <li><a href="#about"><span class="num" aria-hidden="true">01</span> About me</a></li>
+      <li><a href="#project-1"><span class="num" aria-hidden="true">02</span> DFW Consumer Council</a></li>
+      <li><a href="#project-2"><span class="num" aria-hidden="true">03</span> Cooperative Connections</a></li>
+      <li><a href="#project-3"><span class="num" aria-hidden="true">04</span> HeatWise</a></li>
+    </ol>
+    <div class="nav-utility">
+      <ul class="nav-links">
+        <li><a class="nav-link" href="#contact">
+          <svg aria-hidden="true" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="2" y="3.5" width="12" height="9" rx="1.5"/><path d="m2.5 4.5 5.5 4.5 5.5-4.5"/></svg>
+          Contact
+        </a></li>
+        <li><a class="nav-link" href="resume.pdf" target="_blank" rel="noopener">
+          <svg aria-hidden="true" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M3 13h10"/></svg>
+          Resume
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div id="scene" class="scene">
+      <p id="status" class="status" role="status">Loading map…</p>
+      <div id="labels" class="labels"></div>
+    </div>
+    <h1 class="visually-hidden">Ian Smith’s portfolio: an interactive topographic map</h1>
+    <p class="visually-hidden map-only">The map is decorative. Use the section links to visit each part of the portfolio.</p>
+
+    <!-- Section content. Each article's data-section must match an id in js/main.js. -->
+    <div id="panel" class="panel" aria-label="Section details" role="region">
+      <button id="panel-close" class="panel-close" type="button">
+        <span aria-hidden="true">←</span> Back to map <kbd>Esc</kbd>
+      </button>
+
+      <article data-section="about" aria-labelledby="h-about">
+        <p class="eyebrow">01 · Base camp</p>
+        <h2 id="h-about" tabindex="-1">About me</h2>
+        <div class="intro">
+          <!-- Placeholder: replace with your headshot, e.g. <img class="headshot" src="headshot.jpg" alt="Ian Smith"> -->
+          <div class="headshot headshot--placeholder" role="img" aria-label="Headshot coming soon"><span aria-hidden="true">IS</span></div>
+          <p class="lead">Hi, I’m Ian Smith. I’m a product strategist and designer, finishing my BFA in UX Design at the University of North Texas.</p>
+        </div>
+        <p>I’ve never thought of myself as an artist, but I’ve always been a systems thinker. I started out in engineering and moved into design because it offered the same problem solving with far more breadth. Product strategy is where it all clicks for me: thinking in systems, big and small, and figuring out what’s worth building.</p>
+        <h3>How I work</h3>
+        <p>I start with context: where, why and how. As I learn more, I move into abstraction, boiling a problem down to its simplest parts and why each one matters to the story. I think out loud and on a whiteboard, and I’m driven to make things happen.</p>
+        <p>I’m also working to become a better storyteller. I’ve joined my school’s improv club and my local Toastmasters chapter, so I can explain design decisions with confidence and bring stakeholders along with a clear narrative.</p>
+        <h3>Where I’ve been</h3>
+        <ul class="timeline">
+          <li><span>DFW Airport</span> Innovation project manager intern, 2026</li>
+          <li><span>EndoMD</span> Lead web developer and research assistant, 2024 to now</li>
+          <li><span>Target</span> Design researcher, student research contract, 2024 to 2025</li>
+          <li><span>Citi</span> Analyst and UI developer intern, 2023</li>
+        </ul>
+        <h3>Off the clock</h3>
+        <p>You’ll usually find me hiking, camping or on a road trip. I’m working toward visiting every Texas state park. I love hockey, and I’ve always been a maker.</p>
+        <p class="about-links"><a href="#contact">Get in touch</a> · <a href="resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a></p>
+      </article>
+
+      <article data-section="project-1" aria-labelledby="h-p1">
+        <p class="eyebrow">02 · Summit</p>
+        <h2 id="h-p1" tabindex="-1">Innovation Consumer Council</h2>
+        <p class="lead">Consumer feedback in 10 days, not 2 months.</p>
+        <dl class="facts"><div><dt>Role</dt><dd>Innovation Project Manager (intern), project lead</dd></div><div><dt>Timeline</dt><dd>May – Jul 2026 (10 weeks)</dd></div><div><dt>Team</dt><dd>Led it myself, with oversight from my manager and support from a 5-person innovation team</dd></div></dl>
+        <p>I stood up DFW Airport's Innovation Consumer Council, a fast way for the innovation team to hear from real travelers before committing money to an idea. Its first study went from concept selection to 240 consumer responses and a leadership readout in about 10 days. The traditional route took about 2 months and could cost $20,000 or more.</p>
+        <div class="panel-hard"><p class="struggle-tag">Where it got hard</p><ul><li>I lost half my internship before the real work could start.</li><li>Recruiting the right people, fast.</li><li>Owning it alone.</li></ul></div>
+        <p class="panel-actions"><a class="btn btn--primary" href="dfw-consumer-council.html">Read the case study <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
+      </article>
+
+      <article data-section="project-2" aria-labelledby="h-p2">
+        <p class="eyebrow">03 · The falls</p>
+        <h2 id="h-p2" tabindex="-1">Cooperative Connections</h2>
+        <p class="lead">Helping rural electric co-ops mobilize the help their communities already have.</p>
+        <dl class="facts"><div><dt>Role</dt><dd>Team lead &amp; project manager</dd></div><div><dt>Timeline</dt><dd>Fall 2026 capstone, UNT</dd></div><div><dt>Team</dt><dd>2 (with Quincy)</dd></div></dl>
+        <p>When the power goes out in rural Texas, help is often far away, but neighbors, churches and local groups already step in. Cooperative Connections is a dashboard and partner portal that gives rural electric cooperatives a map of that community help. It shows where coverage has gaps and helps them fill those gaps with local partners, so outages hurt less without building anything new.</p>
+        <div class="panel-hard"><p class="struggle-tag">Where it got hard</p><ul><li>The system was enormous.</li><li>Our first concept was too vague.</li><li>Leading a two-person capstone at full scale.</li></ul></div>
+        <p class="panel-actions"><a class="btn btn--primary" href="cooperative-connections.html">Read the case study <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
+      </article>
+
+      <article data-section="project-3" aria-labelledby="h-p3">
+        <p class="eyebrow">04 · The lake</p>
+        <h2 id="h-p3" tabindex="-1">HeatWise</h2>
+        <p class="lead">Personal heat risk for people in cities that were never built for heat.</p>
+        <dl class="facts"><div><dt>Role</dt><dd>Team lead &amp; project manager</dd></div><div><dt>Timeline</dt><dd>Fall 2026 capstone, UNT</dd></div><div><dt>Team</dt><dd>2 (with Gabi)</dd></div></dl>
+        <p>Heat waves are reaching U.S. cities that have little experience managing them. HeatWise is a mobile app for renters, older adults and people with health conditions. It explains what today's heat means for <em>their</em> body, shows where they can cool down right now, and helps them check on the people they care for.</p>
+        <div class="panel-hard"><p class="struggle-tag">Where it got hard</p><ul><li>Our scope was too big, and it was costing us.</li><li>Choosing between two good directions.</li><li>Keeping a two-person team moving.</li></ul></div>
+        <p class="panel-actions"><a class="btn btn--primary" href="heatwise.html">Read the case study <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
+      </article>
+
+      <article data-section="contact" aria-labelledby="h-contact">
+        <p class="eyebrow">Ranger station</p>
+        <h2 id="h-contact" tabindex="-1">Contact</h2>
+        <p>I’m looking for roles in product strategy, innovation and service strategy, and project management. Email is the fastest way to reach me.</p>
+        <ul class="contact-list">
+          <li><span>Email</span> <a href="mailto:ian@smith-family.me">ian@smith-family.me</a></li>
+          <li><span>LinkedIn</span> <a href="https://www.linkedin.com/in/iansmithdesign" target="_blank" rel="noopener">linkedin.com/in/iansmithdesign</a></li>
+          <li><span>Resume</span> <a href="resume.pdf" target="_blank" rel="noopener">Download PDF</a></li>
+        </ul>
+      </article>
+    </div>
+  </main>
+
+  <div class="regen-wrap">
+    <div class="regen-row">
+    <button id="regen" class="regen" type="button">
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9"/><path d="M13.5 2.5v3h-3"/></svg>
+      New terrain <kbd>G</kbd>
+    </button>
+        <button id="time-toggle" class="icon-btn regen-icon" type="button" aria-pressed="false" aria-label="Switch to night" title="Day / night (N)">
+          <svg class="icon-moon" aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M13 9.5A5.5 5.5 0 0 1 6.5 3a5.5 5.5 0 1 0 6.5 6.5Z"/></svg>
+          <svg class="icon-sun" aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1"/></svg>
+        </button>
+    </div>
+    <p id="regen-seed" class="regen-seed" aria-hidden="true"></p>
+  </div>
+
+  <!-- Map controls, bottom right: compass (reset), zoom, and the key -->
+  <div class="map-controls" role="group" aria-label="Map controls">
+    <button id="compass" class="ctrl compass" type="button" aria-label="Reset view" title="Reset view (R)">
+      <svg id="compass-rose" aria-hidden="true" viewBox="0 0 44 44">
+        <circle cx="22" cy="22" r="19" fill="none" stroke="currentColor" stroke-opacity="0.25"/>
+        <g stroke="currentColor" stroke-opacity="0.5" stroke-width="1">
+          <line x1="22" y1="3" x2="22" y2="6"/><line x1="22" y1="38" x2="22" y2="41"/>
+          <line x1="3" y1="22" x2="6" y2="22"/><line x1="38" y1="22" x2="41" y2="22"/>
+        </g>
+        <path d="M22 9 L26 22 L18 22 Z" class="needle-n"/>
+        <path d="M22 35 L26 22 L18 22 Z" class="needle-s"/>
+        <text x="22" y="17.5" text-anchor="middle" class="compass-n">N</text>
+      </svg>
+    </button>
+    <div class="ctrl-stack">
+      <button id="zoom-in" class="ctrl" type="button" aria-label="Zoom in" title="Zoom in (+)">
+        <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <button id="zoom-out" class="ctrl" type="button" aria-label="Zoom out" title="Zoom out (−)">
+        <svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <button id="legend-toggle" class="ctrl" type="button" aria-expanded="false" aria-controls="legend" title="Map key (?)">
+      <span aria-hidden="true">?</span><span class="visually-hidden">Map key and keyboard shortcuts</span>
+    </button>
+  </div>
+
+  <aside id="legend" class="legend" aria-labelledby="legend-title" hidden>
+    <p id="legend-title" class="legend-title">Map key</p>
+    <div class="legend-groups">
+      <dl>
+        <dt class="group">Look around</dt>
+        <div><dt><kbd aria-label="Left arrow">←</kbd><kbd aria-label="Right arrow">→</kbd></dt><dd>Orbit</dd></div>
+        <div><dt><kbd aria-label="Up arrow">↑</kbd><kbd aria-label="Down arrow">↓</kbd></dt><dd>Tilt</dd></div>
+        <div><dt><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></dt><dd>Pan</dd></div>
+        <div><dt><kbd>+</kbd><kbd aria-label="Minus">−</kbd></dt><dd>Zoom</dd></div>
+      </dl>
+      <dl>
+        <dt class="group">Get around</dt>
+        <div><dt><kbd>1</kbd><span aria-label="to">–</span><kbd>4</kbd></dt><dd>Visit a place</dd></div>
+        <div><dt><kbd>R</kbd></dt><dd>Reset view</dd></div>
+        <div><dt><kbd>G</kbd></dt><dd>New terrain</dd></div>
+        <div><dt><kbd>N</kbd></dt><dd>Day / night</dd></div>
+        <div><dt><kbd>Esc</kbd></dt><dd>Back to map</dd></div>
+      </dl>
+    </div>
+    <p class="legend-mouse">Drag to orbit · Right-drag or two fingers to pan · Scroll or pinch to zoom</p>
+  </aside>
+
+  <p id="hint" class="hint" aria-hidden="true">Drag to look around · Click a marker to explore</p>
+
+  <p id="live" class="visually-hidden" aria-live="polite"></p>
+</body>
+</html>
